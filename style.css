@@ -111,7 +111,7 @@ section{
     padding: 100px 0;
 }
 
-.about, .services, .skills {
+.about, .services, .skills, .work {
     font-family: 'Poppins', sans-serif;
 }
 
@@ -207,14 +207,16 @@ content: "who i am";
 }
 
     /* services section styling */
-    .services{
+    .services, .work{
         color:#fff;
         background:rgb(21, 31, 48);
     }
-    .services .title::before{
+    .services .title::before,
+    .work .title::before {
         background:#fff;
     }
-    .services .title::after{
+    .services .title::after,
+    .work .title::after{
         background: rgb(21, 31, 48);
         content:"what i do";
     }
@@ -333,6 +335,58 @@ content: "who i am";
             width: 25%;
         }
 
+        /* work section styling */
+        .work .title::after{
+            content:"what i've done";  
+        }
+
+        .work .carousel .card{
+            background:rgb(33, 48, 73);
+            border-radius: 6px;
+            padding: 25px 35px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .work .carousel .card:hover{
+            background:goldenrod;
+            color:black;
+        }
+        .work .carousel .card .box{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease-in;
+        }
+        .work .carousel .card:hover .box{
+            transform: scale(1.05);
+        }
+        .work .carousel .card .text{
+            font-size: 25px;
+            font-weight: 500;
+            margin: 10px 0 7px 0;
+        }
+        .work .carousel .card img{
+            height:175px;
+            width:250px;
+            object-fit: cover;
+            border-radius:6px;
+            border:solid 2px goldenrod;
+        }
+        .work .carousel .card:hover img{
+            border-color:#111;
+        }
+
+        .owl-dots{
+            text-align: center;
+            margin-top: 20px;
+        }
+        .owl-dot {
+            height: 13px;
+            width: 13px;
+            outline:none!important;
+        }
+
 /* responsive media query start */
 @media (max-width: 1300px){
     .home .max-width{
@@ -372,7 +426,7 @@ content: "who i am";
         width: 100%;
         left: -100%;
         top: 0;
-        background: #111;
+        background: rgb(33, 48, 73);
         text-align:center;
         padding-top: 80px;
         transition: all 0.3s ease;
@@ -421,6 +475,10 @@ content: "who i am";
         width: calc(50% - 10px);
         margin-bottom: 20px;
     }
+    .skills .skills-content .column{
+        width:100%;
+        margin-bottom: 35px;
+    }
 
 
 
@@ -444,10 +502,11 @@ content: "who i am";
         font-size:20px;
         padding: 9px 25px;
     }
-    .services .serv-content .card{
+    .services .serv-content .card,
+    .skills .skills-content .column{
         width: 100%;
     }
-
+}
         
     
     
